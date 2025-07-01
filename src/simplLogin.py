@@ -4,10 +4,10 @@ from tkinter  import ttk,messagebox
 class SimpleLogin(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Login Form")
+        self.title("LF")
 
         #frame
-        self.main_frame=tk.Frame(self,relief="groove",borderwidth=5)
+        self.main_frame=tk.Frame(self,relief="groove",borderwidth=10)
         self.main_frame.pack(fill="both",expand=True)
 
         self.create_widget()
@@ -15,22 +15,23 @@ class SimpleLogin(tk.Tk):
 
     def create_widget(self):
         #Have a title of the frame
-        self.title_label=tk.Label(self.main_frame,text="Login Form",font=("Arial", 14))
+        self.title_label=tk.Label(self.main_frame,text="Login Form",font=("Arial", 20))
         self.title_label.grid(row=0,column=0,columnspan=2,pady=10)
 
 
         #Lable the widgets
         tk.Label(self.main_frame,text="username").grid(row=1,column=0,sticky="w",padx=5,pady=5)
         tk.Label(self.main_frame,text="password").grid(row=2,column=0,sticky="w",padx=5,pady=5)
-        #tk.Label(self.main_frame,text="Login").grid(row=3,column=0,sticky="w",padx=5,pady=5)
-        #tk.Label(self.main_frame,text="Reset").grid(row=3,column=1,sticky="w",padx=5,pady=5)
 
-        #Create the widgets entry functionality
+
+
+        # entry field
         self.entry_username=tk.Entry(self.main_frame,width=30)
         self.entry_username.grid(row=1,column=1,pady=5)
         self.entry_password=tk.Entry(self.main_frame,width=30,show="*")
         self.entry_password.grid(row=2,column=1,pady=5)
 
+         #button login,reset and quit
         tk.Button(self.main_frame,text="Login",command=self.show_popup).grid(row=3,column=0,pady=10)
         tk.Button(self.main_frame,text="Reset",command=self.reset_form).grid(row=3,column=1,pady=10)
         tk.Button(self.main_frame,text="Quit",command=self.destroy).grid(row=4,column=0,columnspan=1,pady=10)
